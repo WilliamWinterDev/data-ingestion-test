@@ -14,7 +14,7 @@ The data-ingestor is written in Python 3.9 and uses PyMongo to store a JSON file
 
 ### Usage
 
-`docker-compose up -d` inside the root folder so we have the Docker MongoDB instance
+`docker compose up -d` inside the root folder so we have the Docker MongoDB instance
 
 `pip install -r requirements.txt` - Install the requirements for the data ingestor.
 
@@ -26,7 +26,7 @@ The data api is written in Golang and uses Mux to create a basic API to read the
 
 ### Usage
 
-`docker-compose build && docker-compose up -d` inside the root folder we should now have the read only API and the MongoDB container running, to access the API you can use [https://localhost:6001/](http://localhost:6001/).
+`docker compose build && docker compose up -d` inside the root folder we should now have the read only API and the MongoDB container running, to access the API you can use [https://localhost:6001/](http://localhost:6001/).
 
 __startTimestamp__ & __endTimestamp__ are both epoch timestamps for the data segment you wish to view.
 
