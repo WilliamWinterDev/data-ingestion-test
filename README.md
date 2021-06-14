@@ -16,9 +16,9 @@ The data-ingestor is written in Python 3.9 and uses PyMongo to store a JSON file
 
 `docker compose up -d` inside the root folder so we have the Docker MongoDB instance
 
-`pip install -r requirements.txt` - Install the requirements for the data ingestor.
+`pip install -r data-ingestor/requirements.txt` - Install the requirements for the data ingestor.
 
-`python ingestor.py` this will generate a file called __data.json__ which will include 10 minutes of mock metrics data. The script will then look at __data.json__ and then loop through the data and make sure the data is within the past 5 minutes and if it is then import the data into the MongoDB container.
+`python data-ingestor/ingestor.py` this will generate a file called __data.json__ which will include 10 minutes of mock metrics data. The script will then look at __data.json__ and then loop through the data and make sure the data is within the past 5 minutes and if it is then import the data into the MongoDB container.
 
 ## Data-API
 
