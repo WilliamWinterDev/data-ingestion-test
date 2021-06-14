@@ -42,5 +42,5 @@ _Note:_ If you are using Golang directly to start the API the port will be __600
 Given I had more time I would implement the following:
 
 - Combine the Python and Golang applications to use single environment variables file so they are not duplication and easier to manage.
-- I would add unit tests to the Golang API.
+- I would add unit tests to both projects.
 - I would rework filters so they're easier to create instead of being hard coded to timestamp.

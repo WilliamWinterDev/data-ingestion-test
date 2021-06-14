@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/WilliamWinterDev/test-metrics-api/helper"
-	"github.com/WilliamWinterDev/test-metrics-api/models"
+	"github.com/WilliamWinterDev/data-ingestion-test/helper"
+	"github.com/WilliamWinterDev/data-ingestion-test/models"
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -66,7 +66,6 @@ func getFilter(params map[string]string) primitive.M {
 			"$lt":  endTime,
 		}}
 	} else {
-		fmt.Println("Returning all metrics")
 		return bson.M{}
 	}
 }

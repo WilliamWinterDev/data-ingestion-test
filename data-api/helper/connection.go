@@ -3,12 +3,11 @@ package helper
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
 
-	"github.com/WilliamWinterDev/test-metrics-api/models"
+	"github.com/WilliamWinterDev/data-ingestion-test/models"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -22,7 +21,6 @@ func ConnectDB() *mongo.Collection {
 	}
 
 	clientOptions := options.Client().ApplyURI("mongodb://" + mongoHost)
-	fmt.Println("Connecting to " + mongoHost + " mongo database")
 
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 
@@ -30,10 +28,7 @@ func ConnectDB() *mongo.Collection {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Connected to MongoDB!")
-
 	collection := client.Database("metrics").Collection("cpu_data")
-	fmt.Println(collection)
 
 	return collection
 }

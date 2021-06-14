@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/WilliamWinterDev/test-metrics-api/metrics"
+	"github.com/WilliamWinterDev/data-ingestion-test/metrics"
 	"github.com/gorilla/mux"
 )
 

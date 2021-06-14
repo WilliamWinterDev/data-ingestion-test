@@ -1,4 +1,4 @@
-module github.com/WilliamWinterDev/test-metrics-api
+module github.com/WilliamWinterDev/data-ingestion-test
 
 go 1.12
 
