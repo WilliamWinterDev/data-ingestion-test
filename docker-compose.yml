@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  mongodb:
+      image: mongo
+      container_name: sky-mongodb
+      environment:
+          - PUID=1000
+          - PGID=1000
+      volumes:
+          - mongo_data:/data/db
+      ports:
+          - 6002:27017
+      restart: unless-stopped
+  goapi:
+      build: 
+        context: ./
+        dockerfile: ./docker/go/Dockerfile
+      environment:
+        - APP_HOST=:8080
+        - MONGODB_HOST=mongodb:27017
+      ports:
+        - 6001:8080
+      depends_on: 
+        - mongodb
+
+volumes:
+    mongo_data:
